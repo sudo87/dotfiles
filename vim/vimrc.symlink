@@ -75,4 +75,3 @@ set tabstop=2 shiftwidth=2 expandtab
 set t_Co=256
 set term=xterm-256color
 let g:airline_powerline_fonts = 1
-

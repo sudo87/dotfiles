@@ -1,0 +1,12 @@
+# .zshenv is sourced on all invocations of the shell, unless the -f option is set.
+# It should contain commands to set the command search path, plus other important environment variables.
+# .zshenv' should not contain commands that produce output or assume the shell is attached to a tty
+typeset -aU path
+
+export EDITOR='nvim'
+export GIT_EDITOR='nvim'
+
+# JAVA and Maven
+export JAVA_HOME=$(/usr/libexec/java_home)
+export MAVEN_HOME=/usr/local/apache-maven-3.8.3
+export PATH=$PATH:$MAVEN_HOME/bin
