@@ -6,6 +6,8 @@ typeset -aU path
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
+export PATH=/usr/local/bin:$PATH
+
 # JAVA and Maven
 export JAVA_HOME=$(/usr/libexec/java_home)
 export MAVEN_HOME=/usr/local/apache-maven-3.8.3

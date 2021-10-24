@@ -113,6 +113,3 @@ setopt HIST_REDUCE_BLANKS        # remove superfluous blanks before recording en
 setopt SHARE_HISTORY             # share history between all sessions.
 setopt HIST_IGNORE_ALL_DUPS      # delete old recorded entry if new entry is a duplicate.
 setopt COMPLETE_ALIASES
-
-# Aliases
-alias lsr='ls -ltr'

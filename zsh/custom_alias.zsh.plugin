@@ -1,0 +1,4 @@
+# Aliases
+alias lsr='ls -ltr'
+alias rdp='cd ~/workplace/dataplatform/dataplatform-solution'
+alias work='cd ~/workplace'

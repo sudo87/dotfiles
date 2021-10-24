@@ -35,6 +35,10 @@ get_linkables() {
     find -H "$DOTFILES" -maxdepth 3 -name '*.symlink'
 }
 
+get_zsh_plugins() {
+    find -H "$DOTFILES" -maxdepth 3 -name '*.plugin'
+}
+
 backup() {
     BACKUP_DIR=$HOME/dotfiles-backup
 
@@ -95,6 +99,21 @@ setup_git() {
     fi
 }
 
+function setup_zsh_plugin() {
+    title "Setting up zsh plugin"
+
+    for file in $(get_zsh_plugins); do
+        filename="$(basename "$file" '.plugin')"
+        target="$HOME/.oh-my-zsh/custom/$filename"
+        if [ -e "$target" ]; then
+            info "~${target#$HOME} already exists... Skipping."
+        else
+            info "Creating symlink for $file"
+            ln -s "$file" "$target"
+        fi
+    done
+}
+
 
 case "$1" in
     backup)
@@ -106,12 +125,9 @@ case "$1" in
     git)
         setup_git
         ;;
-    terminfo)
-        setup_terminfo
-        ;;
     all)
         setup_symlinks
-        setup_terminfo
+        setup_zsh_plugin
         setup_git
         ;;
     *)
